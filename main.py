@@ -62,4 +62,5 @@ def write_md():
 
 
 if __name__ == '__main__':
+    print("begin")
     generate_news()
