@@ -21,3 +21,12 @@ jobs:
       - name: execute py script # run main.py
         run:
           python main.py
+      - name: configure git
+        run: |
+          git config user.name "donglin94"
+          git config user.email "2252301637@qq.com"
+      - name: commit and push
+        run: |
+          git add . 
+          git commit -m "Update news" # commit changes
+          git push # push to current branch
