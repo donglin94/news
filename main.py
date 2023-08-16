@@ -63,6 +63,11 @@ def write_md():
         for line in news_list:
             load_f.writelines(line + '\n')
 
+    with open(os.path.join(os.getcwd(), "README.md"), 'w', encoding='utf-8') as load_me:
+        load_me.writelines("# 每日新闻<br/>" + '\n')
+        for line in news_list:
+            load_me.writelines(line + '\n')
+
 
 if __name__ == '__main__':
     generate_news()
