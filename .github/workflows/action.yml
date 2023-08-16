@@ -1,7 +1,9 @@
 name: run main.py
 on:
   schedule:
-    - cron: '0 4 * * *' # At 04:00 UTC every day
+    - cron: '0 20 * * *' # At 04:00 UTC every day
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
