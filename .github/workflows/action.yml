@@ -23,10 +23,10 @@ jobs:
           python main.py
       - name: configure git
         run: |
-          git config user.name "donglin94"
-          git config user.email "2252301637@qq.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
       - name: commit and push
         run: |
           git add . 
           git commit -m "Update news" # commit changes
-          git push # push to current branch
+          git push origin HEAD:${{ github.ref }} # push to current branch
