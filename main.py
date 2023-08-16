@@ -18,8 +18,11 @@ news_list = []
 
 
 def generate_news():
+    print("begin parser zhihu")
     parser_zhihu()
+    print("begin parser weibo")
     parser_weibo()
+    print("begin write md")
     write_md()
 
 
@@ -62,5 +65,4 @@ def write_md():
 
 
 if __name__ == '__main__':
-    print("begin")
     generate_news()
