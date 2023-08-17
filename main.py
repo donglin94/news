@@ -38,7 +38,7 @@ def parser_weibo():
             tag.extract()
         title = li.select('span')[0].get_text()
         news_list.append(f'- 📰 [{title}]({href})<br/>\n')
-    news_list.append("---")
+    news_list.append("---\n")
 
 
 def parser_zhihu():
@@ -51,11 +51,12 @@ def parser_zhihu():
         title = topic['target']['titleArea']['text']
         href = topic['target']['link']['url']
         news_list.append(f'- 📰 [{title}]({href})<br/>\n')
-    news_list.append("---")
+    news_list.append("---\n")
 
 
 def write_md():
-    cur_dir = os.path.join(os.getcwd(), str(datetime.date.today())[0:7])
+    today_ = str(datetime.date.today())
+    cur_dir = os.path.join(os.getcwd(), today_[0:7])
     if not os.path.exists(cur_dir):
         os.mkdir(cur_dir)
     file_name = str(datetime.date.today()) + '-NEWS.md'
@@ -64,7 +65,7 @@ def write_md():
             load_f.writelines(line + '\n')
 
     with open(os.path.join(os.getcwd(), "README.md"), 'w', encoding='utf-8') as load_me:
-        load_me.write('<h1 align="center">👋 每日新闻</h1>\n')
+        load_me.write(f'<h1 align="center">👋 {today_} 每日新闻</h1>\n')
         load_me.write('\n')
         load_me.writelines(news_list)
 
