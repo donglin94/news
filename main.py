@@ -64,7 +64,7 @@ def write_md():
             load_f.writelines(line + '\n')
 
     with open(os.path.join(os.getcwd(), "README.md"), 'w', encoding='utf-8') as load_me:
-        load_me.writelines('<h1 align="center">👋 每日新闻</h1><br/>\n')
+        load_me.writelines('<h1 align="center">👋 每日新闻</h1>\r\n')
         for line in news_list:
             load_me.writelines(line + '\n')
 
