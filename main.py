@@ -27,7 +27,7 @@ def generate_news():
 
 
 def parser_weibo():
-    news_list.append("> ## 微博")
+    news_list.append("> ## 微博\n")
     res = requests.get(weibo_url, timeout=10, headers=headers)
     soup = BeautifulSoup(res.text, 'lxml')
     lis = soup.select('section li')
@@ -37,12 +37,12 @@ def parser_weibo():
         for tag in li.findAll('em'):
             tag.extract()
         title = li.select('span')[0].get_text()
-        news_list.append(f'- 📰 [{title}]({href})<br/>')
+        news_list.append(f'- 📰 [{title}]({href})<br/>\n')
     news_list.append("---")
 
 
 def parser_zhihu():
-    news_list.append("> ## 知乎")
+    news_list.append("> ## 知乎\n")
     res = requests.get(zhihu_url, timeout=10, headers=headers)
     soup = BeautifulSoup(res.text, 'lxml')
     data = soup.select('#js-initialData')[0].get_text()
@@ -50,7 +50,7 @@ def parser_zhihu():
     for topic in hot_list:
         title = topic['target']['titleArea']['text']
         href = topic['target']['link']['url']
-        news_list.append(f'- 📰 [{title}]({href})<br/>')
+        news_list.append(f'- 📰 [{title}]({href})<br/>\n')
     news_list.append("---")
 
 
@@ -64,9 +64,9 @@ def write_md():
             load_f.writelines(line + '\n')
 
     with open(os.path.join(os.getcwd(), "README.md"), 'w', encoding='utf-8') as load_me:
-        load_me.writelines('<h1 align="center">👋 每日新闻</h1>\n')
-        for line in news_list:
-            load_me.writelines(line + '\n')
+        load_me.write('<h1 align="center">👋 每日新闻</h1>\n')
+        load_me.write('\n')
+        load_me.writelines(news_list)
 
 
 if __name__ == '__main__':
