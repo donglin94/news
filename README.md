@@ -1,6 +1,6 @@
 <h1 align="center">👋 2023-10-06 每日新闻</h1>
 
-> ## 知乎
+## 知乎
 - [2023 年国庆假期前七天，国内出游人数 7.54 亿人次，同比增长 78.9% ，如何看待这一数据？](https://www.zhihu.com/question/624877517)<br/>
 - [女生月工资多少才能承受起买海蓝之谜、香奈儿、 Gucci 、 Prada 等？](https://www.zhihu.com/question/290545785)<br/>
 - [为何全世界都用 JCR 分区，中国要弄个中科院分区？意义何在？](https://www.zhihu.com/question/624723439)<br/>
@@ -52,7 +52,7 @@
 - [如何评价黑袍纠察队衍生剧《V 世代》？](https://www.zhihu.com/question/624275483)<br/>
 - [在英剧《是，大臣》与《是，首相》中，为什么哈克对伯纳德如此宽容？](https://www.zhihu.com/question/624475930)<br/>
 ---
-> ## 微博
+## 微博
 - [#杭州亚运感谢有你#](https://s.weibo.com#)<br/>
 - [半夜醒来时不要看时间 ](https://s.weibo.com/weibo?q=%23%E5%8D%8A%E5%A4%9C%E9%86%92%E6%9D%A5%E6%97%B6%E4%B8%8D%E8%A6%81%E7%9C%8B%E6%97%B6%E9%97%B4%23&t=31&band_rank=1&Refer=top)<br/>
 - [他从火光中走来 男主死了 ](https://s.weibo.com/weibo?q=%E4%BB%96%E4%BB%8E%E7%81%AB%E5%85%89%E4%B8%AD%E8%B5%B0%E6%9D%A5%20%E7%94%B7%E4%B8%BB%E6%AD%BB%E4%BA%86&t=31&band_rank=2&Refer=top)<br/>

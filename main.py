@@ -27,7 +27,7 @@ def generate_news():
 
 
 def parser_weibo():
-    news_list.append("> ## 微博\n")
+    news_list.append("## 微博\n")
     res = requests.get(weibo_url, timeout=10, headers=headers)
     soup = BeautifulSoup(res.text, 'lxml')
     lis = soup.select('section li')
@@ -42,7 +42,7 @@ def parser_weibo():
 
 
 def parser_zhihu():
-    news_list.append("> ## 知乎\n")
+    news_list.append("## 知乎\n")
     res = requests.get(zhihu_url, timeout=10, headers=headers)
     soup = BeautifulSoup(res.text, 'lxml')
     data = soup.select('#js-initialData')[0].get_text()
@@ -60,11 +60,11 @@ def write_md():
     cur_dir = os.path.join(os.getcwd(), '_posts')
     if not os.path.exists(cur_dir):
         os.mkdir(cur_dir)
-    file_name = str(datetime.date.today()) + '-NEWS.md'
+    file_name = today_ + '-NEWS.md'
     with open(os.path.join(cur_dir, file_name), 'w', encoding='utf-8') as load_f:
         load_f.write('---\n')
         load_f.write('layout: post\n')
-        load_f.write(f'title: "{file_name}"\n')
+        load_f.write(f'title: "{today_}-news"\n')
         load_f.write(f'date: {today_} 08:00:00 -0000\n')
         load_f.write(f'categories: {month_}\n')
         load_f.write('---\n')
