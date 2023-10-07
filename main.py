@@ -65,7 +65,7 @@ def write_md():
         load_f.write('---\n')
         load_f.write('layout: post\n')
         load_f.write(f'title: "{today_}-news"\n')
-        load_f.write(f'date: {today_} 08:00:00 -0000\n')
+        load_f.write(f'date: {today_}\n')
         load_f.write(f'categories: {month_}\n')
         load_f.write('---\n')
         load_f.write('\n')
@@ -74,6 +74,11 @@ def write_md():
             load_f.writelines(line + '\n')
 
     with open(os.path.join(os.getcwd(), "index.md"), 'w', encoding='utf-8') as load_me:
+        load_me.write('---\n')
+        load_me.write('layout: home\n')
+        load_me.write('---\n')
+        load_me.write('\n')
+
         load_me.write(f'<h1 align="center">👋 {today_} 每日新闻</h1>\n')
         load_me.write('\n')
         load_me.writelines(news_list)
