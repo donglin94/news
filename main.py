@@ -56,11 +56,20 @@ def parser_zhihu():
 
 def write_md():
     today_ = str(datetime.date.today())
+    month_ = today_[0:7]
     cur_dir = os.path.join(os.getcwd(), '_posts')
     if not os.path.exists(cur_dir):
         os.mkdir(cur_dir)
     file_name = str(datetime.date.today()) + '-NEWS.md'
     with open(os.path.join(cur_dir, file_name), 'w', encoding='utf-8') as load_f:
+        load_f.write('---\n')
+        load_f.write('layout: post\n')
+        load_f.write(f'title: "{file_name}"\n')
+        load_f.write(f'date: {today_} 08:00:00 -0000\n')
+        load_f.write(f'categories: {month_}\n')
+        load_f.write('---\n')
+        load_f.write('\n')
+
         for line in news_list:
             load_f.writelines(line + '\n')
 
