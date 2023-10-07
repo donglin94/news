@@ -37,7 +37,7 @@ def parser_weibo():
         for tag in li.findAll('em'):
             tag.extract()
         title = li.select('span')[0].get_text()
-        news_list.append(f'- 📰 [{title}]({href})<br/>\n')
+        news_list.append(f'- [{title}]({href})<br/>\n')
     news_list.append("---\n")
 
 
@@ -50,13 +50,13 @@ def parser_zhihu():
     for topic in hot_list:
         title = topic['target']['titleArea']['text']
         href = topic['target']['link']['url']
-        news_list.append(f'- 📰 [{title}]({href})<br/>\n')
+        news_list.append(f'- [{title}]({href})<br/>\n')
     news_list.append("---\n")
 
 
 def write_md():
     today_ = str(datetime.date.today())
-    cur_dir = os.path.join(os.getcwd(), today_[0:7])
+    cur_dir = os.path.join(os.getcwd(), '_posts')
     if not os.path.exists(cur_dir):
         os.mkdir(cur_dir)
     file_name = str(datetime.date.today()) + '-NEWS.md'
