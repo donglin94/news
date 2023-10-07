@@ -73,7 +73,7 @@ def write_md():
         for line in news_list:
             load_f.writelines(line + '\n')
 
-    with open(os.path.join(os.getcwd(), "README.md"), 'w', encoding='utf-8') as load_me:
+    with open(os.path.join(os.getcwd(), "index.md"), 'w', encoding='utf-8') as load_me:
         load_me.write(f'<h1 align="center">👋 {today_} 每日新闻</h1>\n')
         load_me.write('\n')
         load_me.writelines(news_list)
