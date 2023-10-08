@@ -31,14 +31,14 @@ def parser_weibo():
     res = requests.get(weibo_url, timeout=10, headers=headers)
     soup = BeautifulSoup(res.text, 'lxml')
     lis = soup.select('section li')
-    for li in lis:
+    for li in lis[:10]:
         href = 'https://s.weibo.com' + li.select('a')[0]['href']
         # 移除强调标签
         for tag in li.findAll('em'):
             tag.extract()
         title = li.select('span')[0].get_text()
         news_list.append(f'- [{title}]({href})<br/>\n')
-    news_list.append("---\n")
+    news_list.append("\n")
 
 
 def parser_zhihu():
@@ -47,11 +47,11 @@ def parser_zhihu():
     soup = BeautifulSoup(res.text, 'lxml')
     data = soup.select('#js-initialData')[0].get_text()
     hot_list = json.loads(data)['initialState']['topstory']['hotList']
-    for topic in hot_list:
+    for topic in hot_list[:10]:
         title = topic['target']['titleArea']['text']
         href = topic['target']['link']['url']
         news_list.append(f'- [{title}]({href})<br/>\n')
-    news_list.append("---\n")
+    news_list.append("\n")
 
 
 def write_md():
